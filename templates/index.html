@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="section">
+    <h2>PANELS</h2>
+    <table class="table table-bordered" style="border-color:black; background-color:rgba(200, 200, 200, 0.5);">
+        <thead style="border-width:4px">
+            <tr>
+                <th colspan="3" rowspan="2" style="border-width:4px">Panel Name</th>
+                <th colspan="4" style="border-width:4px">Circuit Breaker</th>
+                <th colspan="4" style="border-width:4px">Ampere Load</th>
+                <th colspan="3" rowspan="2" style="border-width:4px">Conductor</th>
+                <th rowspan="2" style="border-width:4px">Total Current</th>
+            </tr>
+            <tr>
+                <td style="border-width:4px">Volts</td>
+                <td style="border-width:4px">Poles</td>
+                <td style="border-width:4px">Frame</td>
+                <td style="border-width:4px">Trip</td>
+                <td style="border-width:4px">AN</td>
+                <td style="border-width:4px">BN</td>
+                <td style="border-width:4px">CN</td>
+                <td style="border-width:4px">3P</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for main in mains %}
+                <tr>
+                    <td colspan="3">{{ main["panel_name"] }}</td>
+                    <td>{{ main["voltage"] }}</td>
+                    <td>{{ main["poles"] }}</td>
+                    <td>{{ main["frame"] }}</td>
+                    <td>{{ main["trip"] }}</td>
+                    <td>{{ main["aphase"] }}</td>
+                    <td>{{ main["bphase"] }}</td>
+                    <td>{{ main["cphase"] }}</td>
+                    <td>{{ main["threephase"] }}</td>
+                    <td colspan="3">{{ main["conductor"] }}</td>
+                    <td>{{ main["totalcurrent"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

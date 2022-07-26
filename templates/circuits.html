@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    PANELS
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table class="table table-bordered" style="border-color:black;">
+            <thead>
+                <tr>
+                    <th>Circuit</th>
+                    <th colspan="3">Description</th>
+                    <th colspan="4">Circuit Breaker</th>
+                    <th colspan="4">Ampere Load</th>
+                    <th colspan="3" rowspan="2">Conductor</th>
+                </tr>
+                <tr>
+                    <th>No.</th>
+                    <th colspan="3">Load</th>
+                    <th>Volts</th>
+                    <th>Poles</th>
+                    <th>Frame</th>
+                    <th>Trip</th>
+                    <th>AN</th>
+                    <th>BN</th>
+                    <th>CN</th>
+                    <th>3P</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for circuit in circuits %}
+                    <tr>
+                        <td>{{ circuit["circuit"] }}</td>
+                        <td colspan="3">{{ circuit["description"] }}</td>
+                        <td>{{ circuit["voltage"] }}</td>
+                        <td>{{ circuit["poles"] }}</td>
+                        <td>{{ circuit["frame"] }}</td>
+                        <td>{{ circuit["trip"] }}</td>
+                        <td>{{ circuit["aphase"] }}</td>
+                        <td>{{ circuit["bphase"] }}</td>
+                        <td>{{ circuit["cphase"] }}</td>
+                        <td>{{ circuit["threephase"] }}</td>
+                        <td colspan="3">{{ circuit["pconductor"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

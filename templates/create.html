@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block main %}
+<form action="/create" method="post">
+	<div class="clearfix">
+		<div class="column">
+			<table class="table table-bordered" style="border-color:black; background-color:rgba(200, 200, 200, 0.5);">
+				<tr>
+					<td>Panel Name</td>
+					<td><input type="text" name="panelName" placeholder="Panel Name" /></td>
+				</tr>
+				<tr>
+					<td>Voltage</td>
+					<td><input type="number" name="voltage" placeholder="Voltage" min=0/></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content">
+			<div class="mb-3">
+				<div class="mb-3" style="border-style:solid; border-color:black; border-width: 1px; background-color:rgba(200, 200, 200, 0.5);">
+					<p>The Appliance Rating column only accepts inputs in Watts.</p>
+					<p>If your appliance is rated in Horsepower, please convert it here first.</p>
+				</div>
+				<p>
+					<label>Horsepower</label>
+					<input id="inputHP" type="number" placeholder="Horsepower" oninput="convert(this.value)" onchange="convert(this.value)">
+				</p>
+				  <p>Watts: <span id="watts"></span></p>
+			</div>
+		</div>
+	</div>
+	<br>
+	<table id="inTable" class="table table-bordered" style="border-color:black; background-color:rgba(200, 200, 200, 0.5);">
+		<tr>
+            <th>Circuit Number</th>
+            <th>Lighting Outlet</th>
+            <th>Convenience Outlet</th>
+            <th>Appliance</th>
+            <th>Appliance Rating</th>
+		</tr>
+		<tr>
+			<td id="col0">1</td>
+			<td id="col1"><input type="number" name="lighting" value="" min=0/></td>
+			<td id="col2"><input type="number" name="outlet" value="" min=0/></td>
+			<td id="col3"><input type="text" name="appliance" value="" /></td>
+			<td id="col4"><input type="number" name="rating" value="" min=0/></td>
+		</tr>
+	</table>
+	<div class="mb-3">
+			<input type="button" class="btn btn-info" placeholder="Add Circuit" value="Add Circuit" onclick="addRows()" />
+			<input type="button" class="btn btn-info" placeholder="Delete Circuit" value="Delete Circuit" onclick="deleteRows()" />
+			<input type="submit" class="btn btn-info" value="Submit" />
+	</div>
+ </form>
+{% endblock %}

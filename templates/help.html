@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Help
+{% endblock %}
+
+{% block main %}
+<div style="display:block;">
+    <h2>Load Schedule</h2>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+        Load schedule is a summary of the data of each circuits in an electrical system. It holds the information about
+        how much current a circuit draws, the rating of the equipments or appliances and how many circuits the system have.
+        It also contains information about the circuit breaker and the wire size that should be used that would help
+        electricians in their installation. It could also help so that you'll know if you could still add more load in
+        your circuits or panels for your future expansions.
+    </p>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+        Another reason to make load schedule is the fact that it's a requirement in the electrical plan for the building permit,
+        occupancy permit, maintenance and electrical distribution companies/cooperatives.
+    </p>
+    <div>
+        <img src="static/1.PNG" alt="load schedule" style="width:80%;display: block;margin-left: auto;margin-right: auto;">
+    </div>
+</div>
+<br>
+<br>
+<div class="clearfix">
+    <h3>Step 1</h3>
+    <img src="static/2.png" alt="load schedule" style="width:60%;display: block;margin-left: auto;margin-right: auto;">
+    <br>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+        To be able to use this web app, you need information about your electrical layout. 1st step is to secure yourself
+        an electrical layout of your residence. Electrical layout plans is usually divided into 2, a lighting layout that
+        contains the lightings in your residence and how the lightings are connected. Another one is power layout where
+        convenience outlets and appliances are located.
+    </p>
+</div>
+<br>
+<div class="clearfix">
+    <h3>Step 2</h3>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+        <img src="static/3.png" alt="load schedule" style="width:40%;display: block; float:right;">
+        Once you secured yourself an electrical plan, you now need to get the data that you'll input in the table. First is
+        the lighting layout. In the example, you'll see the lightings in the plan as well as their connection. At the end of
+        the connections, there's a circle with LP 8 or LP 9 writen, which indicates the end of the circuit. You'll need to
+        count the number of lightings connected in each of the circuits of the system. In the example, both LP8 and LP9
+        contains 11 lightings.
+    </p>
+</div>
+<br>
+<div class="clearfix">
+    <h3>Step 3</h3>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+        <img src="static/4.png" alt="load schedule" style="width:40%;display: block; float:left;">
+        After the lighting layout, go to the power layout. Same with that you did in step 2, count the number on convenience
+        outlet in the circuit till you reach the end or the circle. Sometimes, specially when dealing with residential plans,
+        power layouts also contains things kitchen appliances and many other appliances that usually needs separate circuit breakers.
+    </p>
+</div>
+<br>
+<div class="clearfix">
+    <h3>Step 4</h3>
+    <p style="background-color:rgba(200, 200, 200, 0.5);">
+       On the power layout, take note of the circuit numbers of each appliances on the plan. Then look at the rating of the appliance
+       that you have or plan to use and use those ratings on the table. Most of the time each appliance requires a separate circuit breaker
+       to ensure the protection of the equipment and the system and to avoid overloading the circuit that might result to electrical
+       accidents.
+    </p>
+</div>
+
+{% endblock %}
